@@ -61,6 +61,9 @@ const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissor = document.querySelector('.scissor');
 const play_again = document.createElement('button');
+play_again.classList.add('btns');
+play_again.classList.add('plan');
+
 let x = 0;
 let y = 0;
 function outputs(wep)
@@ -76,6 +79,7 @@ function outputs(wep)
     
     if(x==5)
     {
+      RESULT.classList.add("winner");
       RESULT.textContent = "CONGRATS YOU ARE THE ULTIMATE WINNER";
       game = false;
       
@@ -84,6 +88,7 @@ function outputs(wep)
     }
     if(y==5)
     {
+      RESULT.classList.add("loser");
       RESULT.textContent = "Sorry ! YOU LOSE";
       game = false;
      
@@ -98,6 +103,8 @@ function outputs(wep)
 function Reset()
 {
   body.removeChild(play_again);
+  RESULT.classList.remove("winner");
+  RESULT.classList.remove("loser");
   x = 0;
   y = 0;
   game = true;
@@ -160,4 +167,4 @@ function Reset()
 //     console.log(playerscore + " " + computerscore);
 // }
 
-// for(var i = 0; i< 7 ; i++) console.log(getComputerChoice());
+  // for(var i = 0; i< 7 ; i++) console.log(getComputerChoice());
